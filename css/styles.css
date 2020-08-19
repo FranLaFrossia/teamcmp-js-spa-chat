@@ -1,0 +1,334 @@
+/*** Reset Styles ***/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li {
+  margin: 0;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+:root {
+  --greyLight: #edebec;
+  --grey: #aaa;
+  --greyDark: #3c3c3c;
+  --greenOnline: #5aec90;
+  --pink: #fb568d;
+  --lightBlue: #54bae2;
+}
+
+body {
+  font-family: sans-serif;
+  color: var(--greyDark);
+}
+
+#pageContent {
+  background-color: var(--greyLight);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+
+
+
+.btn {
+  text-align: center;
+  padding: 0.5em;
+  text-transform: uppercase;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn--solid {
+  background: var(--greyDark);
+  color: white;
+}
+
+.btn--solid:hover {
+  background: black;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.shadow {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .55);
+}
+
+
+header {
+  color: white;
+  background: var(--greyDark);
+  text-align: center;
+  font-weight: 600;
+  padding: 1em;
+  position: relative;
+}
+
+.header__title {
+  font-size: 1.5em;
+}
+
+.header__back {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  color: white;
+}
+
+.header__back .lni {
+  line-height: 1.6em;
+}
+
+/*** PROFILE STYLES ***/
+.profile {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center;
+}
+
+.profile__img {
+  display: inline-block;
+  margin: 2em auto .5em;
+  position: relative;
+}
+
+.profile__img img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 95%;
+  max-height: 300px;
+  max-width: 300px;
+  width: 95%;
+}
+
+.profile__img__status {
+  border-radius: 50% 50%;
+  width: 85px;
+  height: 85px;
+  line-height: 85px;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  background: var(--greenOnline);
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+}
+
+.profile__data {
+  text-align: left;
+  padding-bottom: 1.5em;
+}
+
+.profile__data__header {
+  position: relative;
+  margin-bottom: .5em;
+}
+
+.profile__data__age,
+.profile__data__name {
+  font-size: 1.5em;
+}
+
+.profile__data__city {
+  color: var(--pink);
+  font-weight: 600;
+}
+
+.profile__data__star {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.profile__button {
+  margin-top: auto;
+  font-size: 1.3em;
+}
+
+
+/*** CHAT STYLES ***/
+.chat {
+  padding: 1em;
+}
+
+.chat__row {
+  padding-bottom: 1em;
+}
+
+.chat__row.--self {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat__row__img,
+.chat__row__msg {
+  display: inline-block;
+}
+
+.chat__row__img {
+  width: 60px;
+}
+
+.chat__row__img img {
+  border-radius: 50%;
+}
+
+.chat__row__msg {
+  background-color: white;
+  padding: 1em;
+  border-radius: 5px;
+  position: relative;
+  max-width: calc(85% - 70px);
+  vertical-align: top;
+}
+
+/* Chat Other */
+.chat__row.--other .chat__row__img {
+  margin-right: 10px;
+}
+
+.chat__row.--other .chat__row__msg {
+  background: var(--lightBlue);
+  color: white;
+  border-top-left-radius: 0;
+}
+
+.chat__row.--other .chat__row__msg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 0px;
+  height: 0px;
+  border: 5px solid var(--lightBlue);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+/* Self */
+.chat__row.--self .chat__row__img {
+  margin-left: 10px;
+}
+
+.chat__row.--self .chat__row__msg {
+  border-top-right-radius: 0;
+}
+
+.chat__row.--self .chat__row__msg:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 0px;
+  height: 0px;
+  border: 5px solid white;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+
+#chatForm {
+  position: fixed;
+  padding: 1em;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--greyLight);
+}
+
+#chatForm .input__wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 1em;
+}
+
+#chatForm .input__wrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 0px;
+  height: 0px;
+  border: 5px solid #fff;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+#chatForm .chat__input {
+  border: 0;
+  height: 2.5em;
+  width: 100%;
+  padding: 0.5em;
+  padding-left: 5px;
+  outline: none;
+}
+
+#chatForm .chat__btn {
+  background-color: var(--pink);
+  color: white;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+#chatForm .chat__btn:hover {
+  background-color: var(--greyDark);
+}
+
+/*** Functionality styles ***/
+body.--added #pageContent {
+  background: var(--grey);
+}
+
+body.--added .profile__button {
+  background: white;
+  color: var(--lightBlue);
+}

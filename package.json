@@ -1,0 +1,11 @@
+{
+  "name": "team_cmp-js-spa",
+  "version": "1.0.0",
+  "description": "Single Page App built with pure JavaScript to simulate a simple chat.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx live-server --verbose"
+  },
+  "author": "La Frossia Francisco"
+}
