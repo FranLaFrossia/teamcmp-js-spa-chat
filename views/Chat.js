@@ -1,4 +1,7 @@
 const Chat = {
+  /**
+   * Render the page content.
+   */
   render: async () => {
     return /*html*/ `
       <header>
@@ -18,6 +21,9 @@ const Chat = {
       </section>
     `;
   },
+  /**
+   * Separate call for DOM interactions
+   */
   after_render: async () => {
 
     const chat = document.querySelector('.chat__wrapper');
@@ -38,7 +44,7 @@ const Chat = {
       }
     }
 
-    // renders array of data in differents chat rows
+    // Render array of data in differents chat rows
     function renderMyChat(chatValue) {
       chatValue.forEach(c => {
         const chatRow = `
@@ -53,7 +59,7 @@ const Chat = {
       });
     }
 
-    // Inserts a new row to the chat view
+    // Insert a new row to the chat view
     function updateMyChat(newChatRow) {
       let myRowTemplate = `
       <div class="chat__row --self">
@@ -66,7 +72,7 @@ const Chat = {
       chat.insertAdjacentHTML('beforeend', myRowTemplate);
     }
 
-    // Renders both chats if they already existed
+    // Render both chats if they already existed
     function renderChat() {
       renderHerChat();
 

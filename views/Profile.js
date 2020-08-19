@@ -35,6 +35,7 @@ const Profile = {
     let profileBtn = document.querySelector('.profile__button');
     let body = document.getElementById('body');
 
+    // Change background color of app
     profileBtn.onclick = function () {
       body.classList.toggle('--added');
     }
